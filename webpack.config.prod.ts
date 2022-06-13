@@ -1,4 +1,4 @@
-import webpackConfig, { devServer } from "./webpack.config";
+import webpackConfig from "./webpack.config";
 import { merge } from "webpack-merge";
 import { Configuration } from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
@@ -25,17 +25,10 @@ const productionConfig = merge(webpackConfig, <Configuration>{
       },
     ],
   },
-  resolve: {
-    extensions: [".js", ".ts", ".json"],
-  },
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-  },
-  devServer: {
-    ...devServer,
-    compress: true,
   },
   optimization: {
     minimize: true,
