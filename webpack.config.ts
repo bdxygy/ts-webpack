@@ -15,7 +15,7 @@ const HtmlOptions: HtmlWebpackOptions = {
 };
 
 export const devServer: DevServerConfiguration = {
-  port: 4200,
+  port: 4321,
   hot: true,
   proxy: proxyConfiguration,
   static: path.resolve(__dirname, "dev"),
